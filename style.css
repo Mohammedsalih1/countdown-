@@ -1,0 +1,156 @@
+:root {
+  --Grayish-blue: hsl(237, 18%, 59%);
+  --Soft-red: hsl(345, 95%, 68%);
+
+  --White: hsl(0, 0%, 100%);
+  --Dark-desaturated-blue: hsl(236, 21%, 26%);
+  --Very-dark-blue: hsl(235, 16%, 14%);
+  --Very-dark-blue-mostly-black: hsl(234, 17%, 12%);
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background: url(bg-stars.svg) no-repeat;
+  background-size: cover;
+  background-color: var(--Very-dark-blue);
+  font-size: 14px;
+}
+ul {
+  list-style: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*small*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* start main  */
+main .container h3 {
+  text-align: center;
+  color: var(--White);
+  margin-bottom: 40px;
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+main .container .count {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+main .container .count .countNum {
+  position: relative;
+}
+main .container .count .countNum .line {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 37%;
+  z-index: 44;
+  background-color: var(--Very-dark-blue);
+}
+main .container .count .countNum #box {
+  font-size: 4rem;
+  text-align: center;
+  color: var(--Soft-red);
+  box-shadow: 0 8px 0 0 var(--Very-dark-blue-mostly-black);
+  background-color: var(--Dark-desaturated-blue);
+  padding: 15px;
+  border-radius: 5px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  main .container .count .countNum #box {
+    font-size: 3rem;
+    padding: 10px;
+  }
+  main .container .count .countNum .line {
+    top: 35%;
+  }
+}
+main .container .count .countNum #box::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  left: -9px;
+  background-color: var(--Very-dark-blue);
+  top: 50%;
+  transform: translateY(-50%);
+}
+main .container .count .countNum #box::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  right: -9px;
+  background-color: var(--Very-dark-blue);
+  top: 50%;
+  transform: translateY(-50%);
+}
+main .container .count .countNum span {
+  text-align: center;
+  display: block;
+  color: var(--Grayish-blue);
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+main .icons {
+  width: 100%;
+  background-image: url(pattern-hills.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  height: 300px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  bottom: 0px;
+}
+main .icons .bg {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+}
+main .icons img {
+  transition: 0.5s;
+  margin-right: 8px;
+  cursor: pointer;
+}
+main .icons img:hover {
+  filter: sepia(1);
+}
+
+/* end main */
